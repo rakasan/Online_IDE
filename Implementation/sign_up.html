@@ -1,0 +1,110 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="obj/style/form.css">
+	<link rel="stylesheet" type="text/css" href="obj/style/font-awesome.min.css">
+</head>
+<body>
+	<div class="container">
+	<form action ="obj/php/registration_form.php" method= "POST" class = "form_login">
+		<h2>Sign Up form</h2>
+		<p class="field">
+			<input type="text" name="login" placeholder ="Username sau email">
+			<i class="icon-user icon-large"></i>
+		</p>
+		<p class="field">
+			<input id="parola" type="password" name="password" placeholder ="Parola">
+			<i class="icon-lock icon-large"></i>
+		</p> 
+		<p class="field">
+			<input type="password" name="password_confirm" placeholder ="Confirma parola">
+			<i class="icon-lock icon-large"></i>
+		</p> 
+		<p class="submit">
+			<button type="submit" name="submit"> 
+				<i class="icon-arrow-right icon-large"></i>
+			</button>
+		<p>
+	</form>
+	<div id="pswd_info">
+		<h4>Parola trebuie sa respecte urmatoarele cerinte</h4>
+		<ul>
+			<li id="litera" class="invalid">Cel putin <span>o litera</span></li>
+			<li id="capital" class="invalid">Cel putin <span>o litera capitala</span></li>
+			<li id="numar" class="invalid">Cel putin <span>un numar</span></li>
+			<li id="lungime" class="invalid">Cel putin <span>8 caractere</span></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript" src="obj/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="obj/js/jquery.passstrength.js"></script>
+<script>
+$('#parola').passStrengthify();
+$('input[type=password]').keyup(function() {
+	var pswd = $(this).val();
+	if ( pswd.length < 8 ) {
+	$('#lungime').removeClass('valid').addClass('invalid');
+} else {
+	$('#lungime').removeClass('invalid').addClass('valid');
+}
+if ( pswd.match(/[A-z]/) ) {
+	$('#litera').removeClass('invalid').addClass('valid');
+} else {
+	$('#litera').removeClass('valid').addClass('invalid');
+}
+//validate capital letter
+if ( pswd.match(/[A-Z]/) ) {
+	$('#capital').removeClass('invalid').addClass('valid');
+} else {
+	$('#capital').removeClass('valid').addClass('invalid');
+}
+//validate number
+if ( pswd.match(/\d/) ) {
+	$('#numar').removeClass('invalid').addClass('valid');
+} else {
+	$('#numar').removeClass('valid').addClass('invalid');
+}
+}).focus(function() {
+	$('#pswd_info').show();
+}).blur(function() {
+	$('#pswd_info').hide();
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+</html>

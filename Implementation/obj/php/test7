@@ -1,0 +1,62 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css"  href="obj/css/style.css" >
+<link href="obj/css/lightbox.css" rel="stylesheet" />
+
+</head>
+<body>
+<div class="wrapper">
+	<div class="left"><a href="index.html"><img src="obj/img/logo.png"></a></div>fwef
+	<img class="center-left" src="obj/img/sumikiri_kanji.jpg">
+	<ul class="right">
+		<li><a class="rosu" href="index.html">Home</a></li>
+		<li><a class="rosu" href="contact.html">Contact</a></li>
+	</ul>
+	<img  class="right-center" src="obj/img/ski.jpg">
+	
+	<div class="clear"></div>
+</div>
+<div class="red">
+	<div class="wrapper">
+		<ul class="left">
+		<li><a href="noi.html">Despre noi</a></li>
+		<li><a href="noutati.html">Noutati</a></li>
+		<li><a href="instructori.html">Instructori</a></li>
+		<li><a href="evenimente.html">Evenimente</a></li>
+		<li><a href="diverse.html">Diverse</a></li>
+		<li><a href="galerie.html">Galerie</a></li>
+	</ul>
+	<div class="right"><img src="obj/img/shotokan_tiger.png"></div>
+
+	</div>
+</div>
+<div class="wrapper">
+<h6 >"Prioritatea oricarui practicant o reprezinta <br>desavarsirea caracterului."</h6>
+<div class="left sapte_sute">
+<h4>Galerie Foto</h4>
+<a href="obj/img/gallery/1.jpg" rel="lightbox" title="Sumikiri"><img  class ="img_mic"src="obj/img/gallery/1.jpg" > </a>
+<a href="obj/img/gallery/2.jpg" rel="lightbox" title="Sumikiri"><img  class ="img_mic"src="obj/img/gallery/2.jpg" ></a>
+<a href="obj/img/gallery/3.jpg" rel="lightbox" title="Sumikiri"><img  class ="img_mic"src="obj/img/gallery/3.jpg" ></a>
+<a href="obj/img/gallery/4.jpg" rel="lightbox" title="Sumikiri"><img  class ="img_mic"src="obj/img/gallery/4.jpg" ></a>
+<a href="obj/img/gallery/5.jpg" rel="lightbox" title="Sumikiri"><img  class ="img_mic"src="obj/img/gallery/5.jpg" ></a>
+<a href="obj/img/gallery/6.jpg" rel="lightbox" title="Sumikiri"><img  class ="img_mic"src="obj/img/gallery/6.jpg" ></a>
+<a href="obj/img/gallery/7.jpg" rel="lightbox" title="Sumikiri"><img  class ="img_mic"src="obj/img/gallery/7.jpg" ></a>
+<a href="obj/img/gallery/8.jpg" rel="lightbox" title="Sumikiri"><img  class ="img_mic"src="obj/img/gallery/8.jpg" ></a>
+<a href="obj/img/gallery/9.jpg" rel="lightbox" title="Sumikiri"><img  class ="img_mic"src="obj/img/gallery/9.jpg" ></a>
+<a href="obj/img/gallery/10.jpg" rel="lightbox" title="Sumikiri"><img  class ="img_mic"src="obj/img/gallery/10.jpg" ></a>
+
+
+</div>
+<img class="right" src="obj/img/shotokan.bmp">
+</div>
+
+<div class="footer clear">
+<div class="wrapper">
+© Racasan Vlad 2013 
+</div>
+</div>
+</body>
+
+<script src="obj/js/jquery-1.7.2.min.js"></script>
+<script src="obj/js/lightbox.js"></script>
+</html>
