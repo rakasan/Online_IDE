@@ -1,5 +1,11 @@
 <html>
 <head>
+	<style>
+	textarea{
+		width: 500px;
+		height: 450px;
+	}
+	</style>
 <script>
 function showHint(str)
 {
@@ -25,6 +31,28 @@ xmlhttp.onreadystatechange=function()
   }
 
 xmlhttp.open("GET","directory_tree.php?path="+str,true);
+xmlhttp.send();
+}
+
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("textarea2").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","adu_fisier.php",true);
 xmlhttp.send();
 }
 </script>
@@ -59,6 +87,9 @@ include "functions.php";
 	echo "</ul>";
 
 ?>
+
 <div id="txtHint"></div>
+<button type="button" onclick="loadXMLDoc()">Change Content</button>
+<textarea   id="textarea2"></textarea>
 </body>
 </html>

@@ -59,4 +59,5 @@ function chmodnum($chmod) {
     $array = str_split($chmod, 3);
     return array_sum(str_split($array[0])) . array_sum(str_split($array[1])) . array_sum(str_split($array[2]));
 }
+
 ?>
