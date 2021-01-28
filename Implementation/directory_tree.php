@@ -31,14 +31,34 @@ include "functions.php";
 	
 	
 	$result = "<ul>"; 
-	$nr =0;
-	foreach ($lista as $inregistrare ) 
+	$date = new DateTime();
+	$nr=$date->getTimestamp()*100;
+	/*foreach ($lista as $inregistrare ) 
 	{
 		$nr++;
 		$result = $result."<li ";
 		if($inregistrare['isDir'])
-			$result = $result. "id =".$nr. "onclick = \"showHint(path=".$inregistrare['path']."\") ";
+		$result = $result. "id ="."\"d" .$nr."\" onclick = \"showHint(".$inregistrare['path']. "," .$nr. ")\" ";
 		$result = $result. ">". $inregistrare['text']."</a>"."</li>";
+		$result =$result. "<div id =\"dd".$nr."\"></div>";
+	}
+	*/
+	foreach ($lista as $inregistrare ) 
+	{
+
+		$nr++;
+		$result = $result. "<li ";
+		if($inregistrare['isDir'])
+		{
+			$result = $result. "id ="."\"d" .$nr."\" onclick = \"showHint('".$inregistrare['path']. "'," .$nr. ")\" ";
+			$result = $result. ">". $inregistrare['text']."</a>"."</li>";
+			$result = $result. "<div id =\"dd".$nr."\"></div>";
+		}else
+		{
+		$result = $result."id ="."\"f" .$nr." \"class=\"red\"  onclick = \"loadXMLDoc('".$inregistrare['path']. "')\" ";
+		$result = $result.">". $inregistrare['text']."</a>"."</li>";
+		}
+
 	}
 	$result = $result. "</ul>";
 	

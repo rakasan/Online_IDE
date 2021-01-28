@@ -5,7 +5,9 @@ $structure = array();
 $arraypointer = &$structure;
 foreach ($lista_raw as $rawfile) {
 	
+  //  echo $rawfile . "<br/>";
     if ($rawfile[0] == '/') {
+       // echo "am";
         $paths = array_slice(explode('/', str_replace(':', '', $rawfile)), 1);
         $arraypointer = &$structure;
         foreach ($paths as $path) {
