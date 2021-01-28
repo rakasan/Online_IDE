@@ -1,37 +1,64 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="obj/style/form.css">
-	<link rel="stylesheet" type="text/css" href="obj/style/font-awesome.min.css">
+<script>
+function showHint(str)
+{
+if (str.length==0)
+  { 
+  document.getElementById("txtHint").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+
+xmlhttp.open("GET","directory_tree.php?path="+str,true);
+xmlhttp.send();
+}
+</script>
+
 </head>
 <body>
-	<form action="obj/php/process_login.php" method="post" class = "form_login">
-		<p class="field">
-			<input type="text" name="login" placeholder ="Username or email">
-			<i class="icon-user icon-large"></i>
-		</p>
-		<p class="field">
-			<input type="password" name="password" placeholder ="Password">
-			<i class="icon-lock icon-large"></i>
-		</p> 
-		<p class="submit">
-			<button type="submit" name="submit"> 
-				<i class="icon-arrow-right icon-large"></i>
-			</button>
-		<p>
-			
-			<p class="field">
-			<?php
-
-			if(isset($_GET['error'])){
-				if($_GET['error'])
-				echo '<h6 class=="red"> email sau parola gresita</6>';	
-			}
-			?>
-				<a class="sign_up" href="sign_up.html">Inregisreaza-te </a>
-			</p>
-	</form>
-
+<?php
+include "functions.php";
+	$host = "rcsn.ro";
+	$username ="rcsnro69";
+	$password ="@dm1np0w3r";
 	
-<body>
+	$con = ftp_connect($host) or die("nu a mers");
+	
+	$login = ftp_login($con,$username,$password);
+	ftp_pasv($con,true);
+	if($login)
+		echo "merge";
+	else
+		echo "nu s-a logat";
+	$lista = adu_foldere($con,'/');
+	echo "<ul>";
+	$nr=0;
+	foreach ($lista as $inregistrare ) 
+	{
+		$nr++;
+		echo "<li ";
+		if($inregistrare['isDir'])
+			echo "id =".$nr. " onclick = \"showHint(".$inregistrare['path']. ")\" ";
+		echo ">". $inregistrare['text']."</a>"."</li>";
+	}
+	echo "</ul>";
 
+?>
+<div id="txtHint"></div>
+</body>
 </html>
